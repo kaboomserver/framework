@@ -1,0 +1,2 @@
+@reboot su server -c "$HOME/framework/script/init.sh"
+0 0 * * * su server -c "$HOME/framework/script/reset.sh" && reboot

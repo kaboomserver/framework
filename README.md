@@ -1,2 +1,2 @@
 # framework
-Framework for running the server
+Framework for running the Kaboom server

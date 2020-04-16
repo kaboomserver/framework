@@ -1,0 +1,1 @@
+iptables -t nat -A INPUT -p tcp --dport 25565 -j SNAT --to-source 192.168.1.100
