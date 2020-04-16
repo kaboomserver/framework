@@ -7,3 +7,4 @@
 
 rm -rf ~/server/*
 cp -Tr ~/server-default/ ~/server/
+
