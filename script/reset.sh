@@ -5,6 +5,7 @@
 
 ~/framework/script/stop.sh
 
+chmod -R 777 ~/server/
 rm -rf ~/server/*
 cp -Tr ~/server-default/ ~/server/
 

@@ -6,6 +6,9 @@
 # Run scripts for starting the Minecraft server and schematic
 # checker in the background
 
+cd ~/
+rm alivechecker kaboom schematics
+
 while true; do
 	dtach -n kaboom ~/framework/script/server.sh > /dev/null 2>&1
 	dtach -n schematics ~/framework/script/schematics.sh > /dev/null 2>&1
