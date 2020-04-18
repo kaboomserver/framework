@@ -11,7 +11,7 @@ while true; do
 	# If server doesn't respond to ping, or if the log file is older than
 	# 3 minutes, kill the server
 
-	if [ "$(env printf '\xFE' | nc -w 15 new.kaboom.pw 25565 | wc -m)" -eq 0 ]; then
+	if [ "$(env printf '\xFE' | nc -w 15 play.kaboom.pw 25565 | wc -m)" -eq 0 ]; then
 		pkill -9 java
 		kill -9 $(ps -C ssh -o pid=)
 		echo $(date) >> ~/kill.log
