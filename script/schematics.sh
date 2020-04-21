@@ -5,6 +5,8 @@
 
 set -x
 
+ssh-keyscan github.com >> .ssh/known_hosts
+
 while true; do
 	git clone git@github.com:kaboomserver/schematics.git ~/server/plugins/FastAsyncWorldEdit/schematics/
 	cd ~/server/plugins/FastAsyncWorldEdit/schematics/
