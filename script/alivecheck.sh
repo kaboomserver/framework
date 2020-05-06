@@ -13,7 +13,6 @@ while true; do
 
 	if [ "$(env printf '\xFE' | nc -w 15 play.kaboom.pw 25565 | wc -m)" -eq 0 ]; then
 		pkill -9 java
-		kill -9 $(ps -C ssh -o pid=)
 		echo $(date) >> ~/kill.log
 	fi
 done
