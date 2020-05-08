@@ -7,7 +7,7 @@
 # checker in the background
 
 cd ~/
-rm alivechecker kaboom schematics
+rm alivecheck kaboom schematics
 
 while true; do
 	dtach -n kaboom ~/framework/script/server.sh > /dev/null 2>&1

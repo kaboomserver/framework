@@ -5,7 +5,7 @@
 
 PATH="$HOME/framework/vendor/java/bin/:$PATH"
 
-dtach -n alivecheck $HOME/framework/script/alivecheck.sh
+dtach -n alivecheck ~/framework/script/alivecheck.sh
 
 # Make sure we're in the server folder, located in the home directory
 cd ~/server/
