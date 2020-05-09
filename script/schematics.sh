@@ -6,11 +6,14 @@
 set -x
 
 ssh-keyscan github.com >> .ssh/known_hosts
+folder=~/server/plugins/FastAsyncWorldEdit/schematics/
 
 while true; do
-	git clone git@github.com:kaboomserver/schematics.git ~/server/plugins/FastAsyncWorldEdit/schematics/
-	cd ~/server/plugins/FastAsyncWorldEdit/schematics/
-	if [ "$(git add $(git ls-files -o) -v)" ]; then
+	if [ ! -d "$folder" ]; then
+		git clone --depth 1 git@github.com:kaboomserver/schematics.git $folder
+	fi
+
+	if [ "$(cd $folder && git add $(git ls-files -o) -v)" ]; then
 		git -c user.name='kaboom' -c user.email='kaboom.pw' commit -m "Add new schematics"
 		git push
 	fi
