@@ -21,6 +21,7 @@ chmod 400 eula.txt
 chmod 400 paper.yml
 chmod 400 permissions.yml
 chmod 400 server-icon.png
+chmod 400 server.properties
 chmod 400 spigot.yml
 chmod 400 wepif.yml
 
