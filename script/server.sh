@@ -1,9 +1,11 @@
 #!/bin/sh
 
-# The alive checker and Minecraft server is started at the same time. For performance reasons, the
-# OpenJ9 JVM is used instead of Java's default Hotspot JVM.
+# The alive checker and Minecraft server is started at the same time
 
 PATH="$HOME/framework/vendor/java/bin/:$PATH"
+
+# Dump classes
+java -Xshare:dump
 
 # Make sure we're in the server folder, located in the home directory
 cd ~/server/
@@ -32,21 +34,9 @@ while true; do
 
 	java \
 		-Xmx1800M \
+		-Xshare:on \
 		-Xss8M \
-		-Xtune:virtualized \
-		-Xaggressive \
-		-Xcompressedrefs \
-		-Xdump:heap+java+snap+system:none \
-		-Xdump:tool:events=throw+systhrow,filter=java/lang/OutOfMemoryError,exec="kill -9 %pid" \
-		-Xgc:concurrentScavenge \
-		-Xgc:dnssExpectedTimeRatioMaximum=3 \
-		-Xgc:scvNoAdaptiveTenure \
-		-Xdisableexplicitgc \
-		-Xshareclasses \
-		-Xshareclasses:noPersistentDiskSpaceCheck \
 		-XX:MaxDirectMemorySize=128M \
-		-XX:+ClassRelationshipVerifier \
-		-XX:+GlobalLockReservation \
 		-XX:+UseContainerSupport \
 		-DPaper.IgnoreJavaVersion=true \
 		-Dpaper.playerconnection.keepalive=360 \

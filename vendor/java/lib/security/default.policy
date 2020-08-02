@@ -103,19 +103,6 @@ grant codeBase "jrt:/jdk.accessibility" {
     permission java.lang.RuntimePermission "accessClassInPackage.sun.awt";
 };
 
-grant codeBase "jrt:/jdk.attach" {
-    permission java.lang.RuntimePermission "accessClassInPackage.com.ibm.oti.util";
-    permission java.lang.RuntimePermission "accessClassInPackage.openj9.internal.tools.attach.target";
-    permission java.lang.RuntimePermission "accessClassInPackage.openj9.internal.tools.attach.diagnostics.base";
-    permission java.util.PropertyPermission "com.ibm.tools.attach.*", "read";
-    // required by com.ibm.tools.attach.attacher.OpenJ9AttachProvider.listVirtualMachinesImp():commonDir.exists(),
-    // openj9.internal.tools.attach.target.Reply.writeReply():new RandomAccessFile(replyFile, "rw"),
-    // and openj9.internal.tools.attach.target.Reply.deleteReply():replyFile.delete()
-    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
-    // required by com.ibm.tools.attach.attacher.OpenJ9VirtualMachine.tryAttachTarget():targetServer.accept()
-    permission java.net.SocketPermission "localhost:1024-", "accept,resolve";
-};
-
 grant codeBase "jrt:/jdk.charsets" {
     permission java.util.PropertyPermission "os.name", "read";
     permission java.lang.RuntimePermission "charsetProvider";
@@ -217,26 +204,6 @@ grant codeBase "jrt:/jdk.zipfs" {
     permission java.util.PropertyPermission "os.name", "read";
     permission java.util.PropertyPermission "user.dir", "read";
     permission java.util.PropertyPermission "user.name", "read";
-};
-
-grant codeBase "jrt:/openj9.cuda" {
-    permission java.lang.RuntimePermission "accessClassInPackage.com.ibm.oti.vm";
-    permission java.lang.RuntimePermission "loadLibrary.cuda4j29";
-    permission java.lang.RuntimePermission "modifyThread";
-    permission java.lang.RuntimePermission "modifyThreadGroup";
-    permission java.util.PropertyPermission "com.ibm.oti.vm.library.version", "read";
-};
-
-grant codeBase "jrt:/openj9.gpu" {
-    permission com.ibm.gpu.GPUPermission "access";
-    permission java.lang.RuntimePermission "accessClassInPackage.com.ibm.gpu.spi";
-    permission java.lang.RuntimePermission "accessClassInPackage.com.ibm.oti.vm";
-    permission java.lang.RuntimePermission "modifyThread";
-    permission java.lang.RuntimePermission "modifyThreadGroup";
-    permission java.util.PropertyPermission "com.ibm.gpu.verbose", "read";
-    permission java.util.PropertyPermission "com.ibm.gpu.enforce", "read";
-    permission java.util.PropertyPermission "com.ibm.gpu.enable", "read";
-    permission java.util.PropertyPermission "com.ibm.gpu.disable", "read";
 };
 
 // permissions needed by applications using java.desktop module
