@@ -13,7 +13,7 @@ while true; do
 		git clone --depth 1 git@github.com:kaboomserver/schematics.git $folder
 	fi
 
-    cd $folder
+	cd $folder
 
 	if [ "$(git add $(git ls-files -o) -v)" ]; then
 		git -c user.name='kaboom' -c user.email='kaboom.pw' commit -m "Add new schematics"
