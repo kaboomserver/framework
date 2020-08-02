@@ -34,7 +34,7 @@ while true; do
 
 	# Stop alive checker (will be started again on the next run)
 
-	killall alivecheck.sh
+	pkill -9 alivecheck.sh
 
 	# Ensure we don't abuse the CPU in case of failure
 	sleep 1
