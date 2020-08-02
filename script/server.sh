@@ -36,7 +36,7 @@ while true; do
 		-Xmx1800M \
 		-Xshare:on \
 		-Xss8M \
-		-XX:MaxDirectMemorySize=128M \
+		-XX:MaxDirectMemorySize=512M \
 		-XX:+UseContainerSupport \
 		-DPaper.IgnoreJavaVersion=true \
 		-Dpaper.playerconnection.keepalive=360 \
