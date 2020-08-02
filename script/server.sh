@@ -30,7 +30,28 @@ while true; do
 
 	# Start Minecraft server
 
-	java -Xmx1800M -Xss8M -Xtune:virtualized -Xaggressive -Xcompressedrefs -Xdump:heap+java+snap+system:none -Xdump:tool:events=throw+systhrow,filter=java/lang/OutOfMemoryError,exec="kill -9 %pid" -Xgc:concurrentScavenge -Xgc:dnssExpectedTimeRatioMaximum=3 -Xgc:scvNoAdaptiveTenure -Xdisableexplicitgc -Xshareclasses -Xshareclasses:noPersistentDiskSpaceCheck -XX:MaxDirectMemorySize=128M -XX:+ClassRelationshipVerifier -XX:+GlobalLockReservation -XX:+UseContainerSupport -DPaper.IgnoreJavaVersion=true -Dpaper.playerconnection.keepalive=360 -DIReallyKnowWhatIAmDoingISwear -jar server.jar nogui
+	java \
+		-Xmx1800M \
+		-Xss8M \
+		-Xtune:virtualized \
+		-Xaggressive \
+		-Xcompressedrefs \
+		-Xdump:heap+java+snap+system:none \
+		-Xdump:tool:events=throw+systhrow,filter=java/lang/OutOfMemoryError,exec="kill -9 %pid" \
+		-Xgc:concurrentScavenge \
+		-Xgc:dnssExpectedTimeRatioMaximum=3 \
+		-Xgc:scvNoAdaptiveTenure \
+		-Xdisableexplicitgc \
+		-Xshareclasses \
+		-Xshareclasses:noPersistentDiskSpaceCheck \
+		-XX:MaxDirectMemorySize=128M \
+		-XX:+ClassRelationshipVerifier \
+		-XX:+GlobalLockReservation \
+		-XX:+UseContainerSupport \
+		-DPaper.IgnoreJavaVersion=true \
+		-Dpaper.playerconnection.keepalive=360 \
+		-DIReallyKnowWhatIAmDoingISwear \
+		-jar server.jar nogui
 
 	# Stop alive checker (will be started again on the next run)
 
