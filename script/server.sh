@@ -13,6 +13,9 @@ cd ~/server/
 while true; do
 	# Make certain files and folders read-only
 
+	mkdir plugins/update/
+	chmod -R 500 plugins/update/
+    chmod 500 plugins/
 	chmod -R 500 plugins/bStats/
 	chmod -R 500 plugins/PluginMetrics/
 	chmod -R 500 plugins/ProtocolLib/
