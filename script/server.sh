@@ -14,7 +14,7 @@ while true; do
 	# Make certain files and folders read-only
 
 	mkdir debug/ dumps/ plugins/update/
-	chmod -R 500 debug/ dumps/ plugins/bStats/ plugins/PluginMetrics/ plugins/ProtocolLib/ plugins/update/
+	chmod -R 500 debug/ dumps/ plugins/bStats/ plugins/PluginMetrics/ plugins/update/
 	chmod 500 plugins/
 	chmod 400 bukkit.yml
 	chmod 400 commands.yml
