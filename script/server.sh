@@ -33,7 +33,7 @@ while true; do
 	# Start Minecraft server
 
 	java \
-		-Xmx1800M \
+		-Xmx1700M \
 		-Xshare:on \
 		-Xss8M \
 		-XX:MaxDirectMemorySize=512M \
