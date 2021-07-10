@@ -2,8 +2,10 @@
 iptables -t nat -A INPUT -p tcp --dport 25565 -j SNAT --to-source 192.168.1.0-192.168.100.100
 iptables -t nat -A INPUT -p udp --dport 19132 -j SNAT --to-source 192.168.1.0-192.168.100.100
 iptables -A INPUT -p tcp --syn --dport 25565 -m connlimit --connlimit-above 5 --connlimit-mask 32 -j REJECT --reject-with tcp-reset
+iptables-save > /etc/iptables/rules.v4
 
 # IPv6
 ip6tables -t nat -A INPUT -p tcp --dport 25565 -j SNAT --to-source 2001:db8::1-2001:db8::6464
 ip6tables -t nat -A INPUT -p udp --dport 19132 -j SNAT --to-source 2001:db8::1-2001:db8::6464
 ip6tables -A INPUT -p tcp --syn --dport 25565 -m connlimit --connlimit-above 5 --connlimit-mask 32 -j REJECT --reject-with tcp-reset
+iptables-save > /etc/iptables/rules.v6
