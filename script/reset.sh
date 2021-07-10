@@ -3,7 +3,10 @@
 # The following script is used when resetting the server
 # Currently every 24 h
 
-~/framework/script/stop.sh
+pkill -9 init.sh
+pkill -9 schematics.sh
+pkill -9 server.sh
+pkill -9 java
 
 chmod -R 777 ~/server/
 rm -rf ~/server/*
