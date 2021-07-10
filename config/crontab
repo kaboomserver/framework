@@ -1,2 +1,5 @@
+# Start the Minecraft server after an OS reboot
 @reboot su server -c '~/framework/script/init.sh'
+
+# Reset and reboot the server every 24 hours (0 0 * * * / at 00:00)
 0 0 * * * su server -c '~/framework/script/reset.sh' && reboot
