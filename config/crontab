@@ -1,3 +1,6 @@
+# Ensure cron knows where commands like 'su' and 'reboot' are located
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:$PATH
+
 # Start the Minecraft server after an OS reboot
 @reboot su server -c '~/framework/script/init.sh'
 
