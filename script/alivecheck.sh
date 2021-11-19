@@ -8,8 +8,7 @@ set -x
 while true; do
 	sleep 420
 
-	# If server doesn't respond to ping, or if the log file is older than
-	# 3 minutes, kill the server
+	# If the server doesn't respond to ping, kill it
 
 	if [ "$(env printf '\xFE' | nc -w 15 0.0.0.0 25565 | wc -m)" -eq 0 ]; then
 		pkill -9 java
