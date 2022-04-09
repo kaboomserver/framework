@@ -11,6 +11,16 @@ java -Xshare:dump
 cd ~/server/
 
 while true; do
+	# Check if the server is stuck in a crash loop, and reset worlds if this is the case
+	# The alive checker resets server_stops.log if the server runs long enough
+
+	stop_log_file=server_stops.log
+
+	if [ -f "$stop_log_file" ] && [ "$(wc -l < $stop_log_file)" -gt 3 ]; then
+		rm -rf worlds/ plugins/FastAsyncWorldEdit/clipboard/ plugins/FastAsyncWorldEdit/history/
+		rm "$stop_log_file"
+	fi
+
 	# Make certain files and folders read-only
 
 	mkdir debug/ dumps/ plugins/update/
@@ -46,6 +56,7 @@ while true; do
 	# Stop alive checker (will be started again on the next run)
 
 	pkill -9 alivecheck.sh
+	echo $(date) >> "$stop_log_file"
 
 	# Ensure we don't abuse the CPU in case of failure
 	sleep 1

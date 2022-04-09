@@ -13,5 +13,8 @@ while true; do
 	if [ "$(env printf '\xFE' | nc -w 15 0.0.0.0 25565 | wc -m)" -eq 0 ]; then
 		pkill -9 java
 		echo $(date) >> ~/kill.log
+	else
+		# Server is still running, reset the crash loop detector
+		rm ~/server/server_stops.log
 	fi
 done
