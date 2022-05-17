@@ -5,12 +5,15 @@
 
 set -x
 
-ssh-keyscan github.com >> .ssh/known_hosts
 folder=~/server/plugins/FastAsyncWorldEdit/schematics/
+hostname=github.com
+
+ssh-keygen -R $hostname
+ssh-keyscan -H $hostname >> ~/.ssh/known_hosts
 
 while true; do
 	if [ ! -d "$folder" ]; then
-		git clone --depth 1 git@github.com:kaboomserver/schematics.git $folder
+		git clone --depth 1 git@$hostname:kaboomserver/schematics.git $folder
 	fi
 
 	cd $folder
