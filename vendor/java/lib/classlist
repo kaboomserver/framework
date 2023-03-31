@@ -150,7 +150,6 @@ java/lang/Thread$FieldHolder
 java/lang/Thread$State
 java/lang/Thread$ThreadIdentifiers
 java/lang/Thread$UncaughtExceptionHandler
-java/lang/ThreadDeath
 java/lang/ThreadGroup
 java/lang/ThreadLocal
 java/lang/ThreadLocal$ThreadLocalMap
@@ -304,6 +303,26 @@ java/lang/ref/ReferenceQueue
 java/lang/ref/ReferenceQueue$Null
 java/lang/ref/SoftReference
 java/lang/ref/WeakReference
+java/lang/reflect/AccessFlag
+java/lang/reflect/AccessFlag$1
+java/lang/reflect/AccessFlag$10
+java/lang/reflect/AccessFlag$11
+java/lang/reflect/AccessFlag$12
+java/lang/reflect/AccessFlag$13
+java/lang/reflect/AccessFlag$14
+java/lang/reflect/AccessFlag$15
+java/lang/reflect/AccessFlag$16
+java/lang/reflect/AccessFlag$17
+java/lang/reflect/AccessFlag$18
+java/lang/reflect/AccessFlag$2
+java/lang/reflect/AccessFlag$3
+java/lang/reflect/AccessFlag$4
+java/lang/reflect/AccessFlag$5
+java/lang/reflect/AccessFlag$6
+java/lang/reflect/AccessFlag$7
+java/lang/reflect/AccessFlag$8
+java/lang/reflect/AccessFlag$9
+java/lang/reflect/AccessFlag$Location
 java/lang/reflect/AccessibleObject
 java/lang/reflect/AnnotatedElement
 java/lang/reflect/Array
@@ -394,7 +413,6 @@ java/security/AccessController
 java/security/AllPermission
 java/security/BasicPermission
 java/security/BasicPermissionCollection
-java/security/CodeSigner
 java/security/CodeSource
 java/security/Guard
 java/security/Permission
@@ -723,6 +741,7 @@ java/util/concurrent/locks/AbstractOwnableSynchronizer
 java/util/concurrent/locks/AbstractQueuedSynchronizer
 java/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionNode
 java/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionObject
+java/util/concurrent/locks/AbstractQueuedSynchronizer$ExclusiveNode
 java/util/concurrent/locks/AbstractQueuedSynchronizer$Node
 java/util/concurrent/locks/Condition
 java/util/concurrent/locks/Lock
@@ -913,6 +932,7 @@ jdk/internal/access/JavaNetURLAccess
 jdk/internal/access/JavaNetUriAccess
 jdk/internal/access/JavaNioAccess
 jdk/internal/access/JavaSecurityAccess
+jdk/internal/access/JavaSecurityPropertiesAccess
 jdk/internal/access/JavaUtilConcurrentFJPAccess
 jdk/internal/access/JavaUtilJarAccess
 jdk/internal/access/JavaUtilResourceBundleAccess
@@ -984,6 +1004,7 @@ jdk/internal/math/MathUtils
 jdk/internal/misc/Blocker
 jdk/internal/misc/CDS
 jdk/internal/misc/CarrierThread
+jdk/internal/misc/CarrierThreadLocal
 jdk/internal/misc/InnocuousThread
 jdk/internal/misc/InternalLock
 jdk/internal/misc/OSEnvironment
@@ -1120,6 +1141,7 @@ sun/invoke/util/Wrapper$1
 sun/invoke/util/Wrapper$Format
 sun/launcher/LauncherHelper
 sun/net/util/IPAddressUtil
+sun/net/util/IPAddressUtil$MASKS
 sun/net/util/URLUtil
 sun/net/www/ParseUtil
 sun/net/www/protocol/file/Handler
@@ -1341,6 +1363,7 @@ sun/util/spi/CalendarProvider
 @lambda-form-invoker [LF_RESOLVE] java.lang.invoke.DirectMethodHandle$Holder invokeStatic L_L
 @lambda-form-invoker [LF_RESOLVE] java.lang.invoke.DirectMethodHandle$Holder invokeStatic L_V
 @lambda-form-invoker [LF_RESOLVE] java.lang.invoke.DirectMethodHandle$Holder invokeStaticInit LL_L
+@lambda-form-invoker [LF_RESOLVE] java.lang.invoke.DirectMethodHandle$Holder invokeStaticInit L_L
 @lambda-form-invoker [LF_RESOLVE] java.lang.invoke.DirectMethodHandle$Holder invokeVirtual L3_V
 @lambda-form-invoker [LF_RESOLVE] java.lang.invoke.DirectMethodHandle$Holder invokeVirtual LL_L
 @lambda-form-invoker [LF_RESOLVE] java.lang.invoke.DirectMethodHandle$Holder newInvokeSpecial L3_L
@@ -1409,7 +1432,9 @@ sun/util/spi/CalendarProvider
 @lambda-proxy java/lang/module/ModuleFinder$2 apply ()Ljava/util/function/Function; (Ljava/lang/Object;)Ljava/lang/Object; REF_invokeStatic java/lang/module/ModuleFinder$2 lambda$findAll$2 (Ljava/lang/module/ModuleFinder;)Ljava/util/stream/Stream; (Ljava/lang/module/ModuleFinder;)Ljava/util/stream/Stream;
 @lambda-proxy java/lang/module/ModuleFinder$2 apply ()Ljava/util/function/Function; (Ljava/lang/Object;)Ljava/lang/Object; REF_invokeVirtual java/util/Optional stream ()Ljava/util/stream/Stream; (Ljava/util/Optional;)Ljava/util/stream/Stream;
 @lambda-proxy java/lang/module/ModuleFinder$2 apply (Ljava/lang/String;)Ljava/util/function/Function; (Ljava/lang/Object;)Ljava/lang/Object; REF_invokeStatic java/lang/module/ModuleFinder$2 lambda$find$0 (Ljava/lang/String;Ljava/lang/module/ModuleFinder;)Ljava/util/Optional; (Ljava/lang/module/ModuleFinder;)Ljava/util/Optional;
+@lambda-proxy java/security/Security run ()Ljava/security/PrivilegedAction; ()Ljava/lang/Object; REF_invokeStatic java/security/Security lambda$static$0 ()Ljava/lang/Object; ()Ljava/lang/Object;
 @lambda-proxy java/text/DecimalFormatSymbols test ()Ljava/util/function/IntPredicate; (I)Z REF_invokeStatic java/text/DecimalFormatSymbols lambda$findNonFormatChar$0 (I)Z (I)Z
+@lambda-proxy java/time/ZoneOffset apply ()Ljava/util/function/Function; (Ljava/lang/Object;)Ljava/lang/Object; REF_invokeStatic java/time/ZoneOffset lambda$ofTotalSeconds$0 (Ljava/lang/Integer;)Ljava/time/ZoneOffset; (Ljava/lang/Integer;)Ljava/time/ZoneOffset;
 @lambda-proxy java/time/format/DateTimeFormatter queryFrom ()Ljava/time/temporal/TemporalQuery; (Ljava/time/temporal/TemporalAccessor;)Ljava/lang/Object; REF_invokeStatic java/time/format/DateTimeFormatter lambda$static$0 (Ljava/time/temporal/TemporalAccessor;)Ljava/time/Period; (Ljava/time/temporal/TemporalAccessor;)Ljava/time/Period;
 @lambda-proxy java/time/format/DateTimeFormatter queryFrom ()Ljava/time/temporal/TemporalQuery; (Ljava/time/temporal/TemporalAccessor;)Ljava/lang/Object; REF_invokeStatic java/time/format/DateTimeFormatter lambda$static$1 (Ljava/time/temporal/TemporalAccessor;)Ljava/lang/Boolean; (Ljava/time/temporal/TemporalAccessor;)Ljava/lang/Boolean;
 @lambda-proxy java/time/format/DateTimeFormatterBuilder queryFrom ()Ljava/time/temporal/TemporalQuery; (Ljava/time/temporal/TemporalAccessor;)Ljava/lang/Object; REF_invokeStatic java/time/format/DateTimeFormatterBuilder lambda$static$0 (Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZoneId; (Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZoneId;
