@@ -92,6 +92,7 @@ java/lang/Long$LongCache
 java/lang/Math
 java/lang/Module
 java/lang/Module$ArchivedData
+java/lang/Module$EnableNativeAccess
 java/lang/Module$ReflectionData
 java/lang/ModuleLayer
 java/lang/ModuleLayer$Controller
@@ -150,6 +151,7 @@ java/lang/Thread$FieldHolder
 java/lang/Thread$State
 java/lang/Thread$ThreadIdentifiers
 java/lang/Thread$UncaughtExceptionHandler
+java/lang/ThreadBuilders$BoundVirtualThread
 java/lang/ThreadGroup
 java/lang/ThreadLocal
 java/lang/ThreadLocal$ThreadLocalMap
@@ -205,7 +207,7 @@ java/lang/invoke/InfoFromMemberName
 java/lang/invoke/InnerClassLambdaMetafactory
 java/lang/invoke/InnerClassLambdaMetafactory$ForwardingMethodGenerator
 java/lang/invoke/InvokerBytecodeGenerator
-java/lang/invoke/InvokerBytecodeGenerator$2
+java/lang/invoke/InvokerBytecodeGenerator$1
 java/lang/invoke/InvokerBytecodeGenerator$ClassData
 java/lang/invoke/Invokers
 java/lang/invoke/Invokers$Holder
@@ -259,9 +261,19 @@ java/lang/invoke/VarHandle$AccessMode
 java/lang/invoke/VarHandle$AccessType
 java/lang/invoke/VarHandleBooleans$FieldInstanceReadOnly
 java/lang/invoke/VarHandleBooleans$FieldInstanceReadWrite
+java/lang/invoke/VarHandleByteArrayAsChars$ArrayHandle
+java/lang/invoke/VarHandleByteArrayAsChars$ByteArrayViewVarHandle
+java/lang/invoke/VarHandleByteArrayAsDoubles$ArrayHandle
+java/lang/invoke/VarHandleByteArrayAsDoubles$ByteArrayViewVarHandle
+java/lang/invoke/VarHandleByteArrayAsFloats$ArrayHandle
+java/lang/invoke/VarHandleByteArrayAsFloats$ByteArrayViewVarHandle
+java/lang/invoke/VarHandleByteArrayAsInts$ArrayHandle
+java/lang/invoke/VarHandleByteArrayAsInts$ByteArrayViewVarHandle
+java/lang/invoke/VarHandleByteArrayAsLongs$ArrayHandle
+java/lang/invoke/VarHandleByteArrayAsLongs$ByteArrayViewVarHandle
+java/lang/invoke/VarHandleByteArrayAsShorts$ArrayHandle
+java/lang/invoke/VarHandleByteArrayAsShorts$ByteArrayViewVarHandle
 java/lang/invoke/VarHandleGuards
-java/lang/invoke/VarHandleInts$FieldInstanceReadOnly
-java/lang/invoke/VarHandleInts$FieldInstanceReadWrite
 java/lang/invoke/VarHandleLongs$FieldInstanceReadOnly
 java/lang/invoke/VarHandleLongs$FieldInstanceReadWrite
 java/lang/invoke/VarHandleReferences$FieldInstanceReadOnly
@@ -326,6 +338,7 @@ java/lang/reflect/AccessFlag$Location
 java/lang/reflect/AccessibleObject
 java/lang/reflect/AnnotatedElement
 java/lang/reflect/Array
+java/lang/reflect/ClassFileFormatVersion
 java/lang/reflect/Constructor
 java/lang/reflect/Executable
 java/lang/reflect/Field
@@ -367,6 +380,7 @@ java/nio/Bits
 java/nio/Bits$1
 java/nio/Buffer
 java/nio/Buffer$1
+java/nio/Buffer$2
 java/nio/ByteBuffer
 java/nio/ByteOrder
 java/nio/CharBuffer
@@ -654,6 +668,9 @@ java/util/ResourceBundle$Control$CandidateListCache
 java/util/ResourceBundle$NoFallbackControl
 java/util/ResourceBundle$ResourceBundleProviderHelper
 java/util/ResourceBundle$SingleFormatControl
+java/util/SequencedCollection
+java/util/SequencedMap
+java/util/SequencedSet
 java/util/ServiceLoader
 java/util/ServiceLoader$1
 java/util/ServiceLoader$2
@@ -736,7 +753,7 @@ java/util/concurrent/atomic/AtomicInteger
 java/util/concurrent/atomic/AtomicLong
 java/util/concurrent/atomic/LongAdder
 java/util/concurrent/atomic/Striped64
-java/util/concurrent/atomic/Striped64$1
+java/util/concurrent/atomic/Striped64$Cell
 java/util/concurrent/locks/AbstractOwnableSynchronizer
 java/util/concurrent/locks/AbstractQueuedSynchronizer
 java/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionNode
@@ -836,7 +853,6 @@ java/util/stream/Collector$Characteristics
 java/util/stream/Collectors
 java/util/stream/Collectors$CollectorImpl
 java/util/stream/Collectors$Partition
-java/util/stream/Collectors$Partition$1
 java/util/stream/FindOps
 java/util/stream/FindOps$FindOp
 java/util/stream/FindOps$FindSink
@@ -905,11 +921,13 @@ java/util/zip/Inflater
 java/util/zip/Inflater$InflaterZStreamRef
 java/util/zip/InflaterInputStream
 java/util/zip/ZipCoder
+java/util/zip/ZipCoder$Comparison
 java/util/zip/ZipCoder$UTF8ZipCoder
 java/util/zip/ZipConstants
 java/util/zip/ZipEntry
 java/util/zip/ZipFile
 java/util/zip/ZipFile$1
+java/util/zip/ZipFile$2
 java/util/zip/ZipFile$CleanableResource
 java/util/zip/ZipFile$EntrySpliterator
 java/util/zip/ZipFile$InflaterCleanupAction
@@ -945,7 +963,6 @@ jdk/internal/foreign/abi/VMStorage
 jdk/internal/jimage/BasicImageReader
 jdk/internal/jimage/BasicImageReader$1
 jdk/internal/jimage/ImageHeader
-jdk/internal/jimage/ImageLocation
 jdk/internal/jimage/ImageReader
 jdk/internal/jimage/ImageReader$SharedImageReader
 jdk/internal/jimage/ImageReaderFactory
@@ -1007,7 +1024,9 @@ jdk/internal/misc/CarrierThread
 jdk/internal/misc/CarrierThreadLocal
 jdk/internal/misc/InnocuousThread
 jdk/internal/misc/InternalLock
+jdk/internal/misc/MainMethodFinder
 jdk/internal/misc/OSEnvironment
+jdk/internal/misc/PreviewFeatures
 jdk/internal/misc/ScopedMemoryAccess
 jdk/internal/misc/Signal
 jdk/internal/misc/Signal$Handler
@@ -1055,7 +1074,6 @@ jdk/internal/org/objectweb/asm/AnnotationVisitor
 jdk/internal/org/objectweb/asm/AnnotationWriter
 jdk/internal/org/objectweb/asm/Attribute
 jdk/internal/org/objectweb/asm/ByteVector
-jdk/internal/org/objectweb/asm/ClassReader
 jdk/internal/org/objectweb/asm/ClassVisitor
 jdk/internal/org/objectweb/asm/ClassWriter
 jdk/internal/org/objectweb/asm/ConstantDynamic
@@ -1106,6 +1124,8 @@ jdk/internal/reflect/ReflectionFactory$GetReflectionFactoryAction
 jdk/internal/reflect/UnsafeFieldAccessorImpl
 jdk/internal/reflect/UnsafeStaticFieldAccessorImpl
 jdk/internal/util/ArraysSupport
+jdk/internal/util/ByteArray
+jdk/internal/util/ClassFileDumper
 jdk/internal/util/Preconditions
 jdk/internal/util/Preconditions$1
 jdk/internal/util/Preconditions$2
@@ -1124,7 +1144,7 @@ jdk/internal/vm/StackableScope
 jdk/internal/vm/ThreadContainer
 jdk/internal/vm/ThreadContainers
 jdk/internal/vm/ThreadContainers$RootContainer
-jdk/internal/vm/ThreadContainers$RootContainer$CountingRootContainer
+jdk/internal/vm/ThreadContainers$RootContainer$TrackingRootContainer
 jdk/internal/vm/vector/VectorSupport
 jdk/internal/vm/vector/VectorSupport$Vector
 jdk/internal/vm/vector/VectorSupport$VectorMask
@@ -1137,7 +1157,6 @@ sun/invoke/util/ValueConversions$WrapperCache
 sun/invoke/util/VerifyAccess
 sun/invoke/util/VerifyType
 sun/invoke/util/Wrapper
-sun/invoke/util/Wrapper$1
 sun/invoke/util/Wrapper$Format
 sun/launcher/LauncherHelper
 sun/net/util/IPAddressUtil
@@ -1187,11 +1206,13 @@ sun/nio/fs/UnixUriUtils
 sun/nio/fs/Util
 sun/reflect/annotation/AnnotationParser
 sun/security/action/GetBooleanAction
+sun/security/action/GetIntegerAction
 sun/security/action/GetPropertyAction
 sun/security/util/Debug
 sun/security/util/FilePermCompat
 sun/security/util/LazyCodeSourcePermissionCollection
 sun/security/util/SecurityProperties
+sun/security/util/SignatureFileVerifier
 sun/text/resources/cldr/FormatData
 sun/util/PreHashedMap
 sun/util/calendar/AbstractCalendar
@@ -1232,7 +1253,6 @@ sun/util/locale/provider/DecimalFormatSymbolsProviderImpl
 sun/util/locale/provider/JRELocaleProviderAdapter
 sun/util/locale/provider/LocaleDataMetaInfo
 sun/util/locale/provider/LocaleProviderAdapter
-sun/util/locale/provider/LocaleProviderAdapter$1
 sun/util/locale/provider/LocaleProviderAdapter$Type
 sun/util/locale/provider/LocaleResources
 sun/util/locale/provider/LocaleResources$ResourceReference
