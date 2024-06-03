@@ -10,10 +10,16 @@ pkill -9 java
 
 # Sync changes with the GitHub repository
 cd ~/framework
-git pull
+git fetch origin --depth 1
+git reset --hard origin/master
+git reflog expire --expire=all --all
+git gc --prune=all
 
 cd ~/server-default
-git pull
+git fetch origin --depth 1
+git reset --hard origin/master
+git reflog expire --expire=all --all
+git gc --prune=all
 
 chmod -R 777 ~/server/
 rm -rf ~/server/*
