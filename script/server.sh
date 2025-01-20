@@ -4,9 +4,6 @@
 
 PATH="$HOME/framework/vendor/java/bin/:$PATH"
 
-# Dump classes
-java -Xshare:dump
-
 # Make sure we're in the server folder, located in the home directory
 cd ~/server/
 
@@ -43,8 +40,9 @@ while true; do
 	# Start Minecraft server
 
 	java \
-		-Xms1700M \
-		-Xmx1700M \
+		-Xms1700M Xmx1700M \
+		\
+		-Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true \
 		-XX:+UseG1GC \
 		-XX:+ParallelRefProcEnabled \
 		-XX:MaxGCPauseMillis=200 \
@@ -65,14 +63,11 @@ while true; do
 		-XX:InitiatingHeapOccupancyPercent=15 \
 		-Xss8M \
 		-XX:MaxDirectMemorySize=512M \
-		-Xshare:on \
-		-XX:+UseContainerSupport \
+		\
 		-XX:-UsePerfData \
-		-DPaper.IgnoreJavaVersion=true \
-		-Dpaper.playerconnection.keepalive=360 \
+		-Dpaper.playerconnection.keepalive=60 \
 		-DIReallyKnowWhatIAmDoingISwear \
-		-Dusing.aikars.flags=https://mcflags.emc.gs \
-		-Daikars.new.flags=true \
+		\
 		-jar server.jar nogui
 
 	# Stop alive checker (will be started again on the next run)
