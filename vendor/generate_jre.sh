@@ -45,7 +45,7 @@ download_extract "$JDK_URL" jdk/
 echo "Building custom JRE..."
 jdk/bin/jlink --no-header-files --no-man-pages --strip-debug \
 	--exclude-files=**java_*.properties,**jrunscript,**keytool,**legal/** \
-	--add-modules java.desktop,java.instrument,java.logging,java.management,java.naming,java.net.http,java.scripting,java.sql,jdk.crypto.ec,jdk.security.auth,jdk.unsupported,jdk.zipfs \
+	--add-modules java.desktop,java.instrument,java.logging,java.management,java.naming,java.net.http,java.scripting,java.sql,jdk.crypto.ec,jdk.naming.dns,jdk.security.auth,jdk.unsupported,jdk.zipfs \
 	--output java
 rm -rf jdk
 
