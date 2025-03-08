@@ -20,13 +20,14 @@ while true; do
 
 	# Make certain files and folders read-only
 
-	mkdir debug/ dumps/ plugins/update/
-	chmod -R 500 debug/ dumps/ plugins/bStats/ plugins/update/
-	chmod 500 plugins/
+	mkdir debug/ dumps/
+	chmod -R 500 debug/ dumps/
+
+	chmod 500 config/ plugins/ mods/
+	chmod 400 config/paper-global.yml config/paper-world-defaults.yml
 	chmod 400 bukkit.yml
 	chmod 400 commands.yml
 	chmod 400 eula.txt
-	chmod 400 paper.yml
 	chmod 400 permissions.yml
 	chmod 400 server-icon.png
 	chmod 400 server.properties
