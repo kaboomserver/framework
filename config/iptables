@@ -1,11 +1,11 @@
 # IPv4
-iptables -t nat -A INPUT -p tcp --dport 25565 -j SNAT --to-source 192.168.1.0-192.168.100.100
-iptables -t nat -A INPUT -p udp --dport 19132 -j SNAT --to-source 192.168.1.0-192.168.100.100
+iptables -t nat -A INPUT -p tcp --dport 25565 -j SNAT --to-source 127.42.0.0-127.42.255.255
+iptables -t nat -A INPUT -p udp --dport 19132 -j SNAT --to-source 127.42.0.0-127.42.255.255
 iptables -A INPUT -p tcp --syn --dport 25565 -m connlimit --connlimit-above 5 --connlimit-mask 32 -j REJECT --reject-with tcp-reset
 iptables-save > /etc/iptables/rules.v4
 
 # IPv6
-ip6tables -t nat -A INPUT -p tcp --dport 25565 -j SNAT --to-source fd00:dead:beef::1-fd00:dead:beef::6464
-ip6tables -t nat -A INPUT -p udp --dport 19132 -j SNAT --to-source fd00:dead:beef::1-fd00:dead:beef::6464
+ip6tables -t nat -A INPUT -p tcp --dport 25565 -j SNAT --to-source fea7:dead:bee5::1-fea7:dead:bee5::ffff
+ip6tables -t nat -A INPUT -p udp --dport 19132 -j SNAT --to-source fea7:dead:bee5::1-fea7:dead:bee5::ffff
 ip6tables -A INPUT -p tcp --syn --dport 25565 -m connlimit --connlimit-above 5 --connlimit-mask 64 -j REJECT --reject-with tcp-reset
 ip6tables-save > /etc/iptables/rules.v6
