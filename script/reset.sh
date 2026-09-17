@@ -6,6 +6,7 @@
 pkill -9 init.sh
 pkill -9 schematics.sh
 pkill -9 server.sh
+pkill -9 alivecheck.sh
 pkill -9 java
 
 # Sync changes with the GitHub repository
